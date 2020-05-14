@@ -1,0 +1,58 @@
+// Variables
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Colours
+$colors: () !default;
+$colors: map-merge(
+    (
+        // Required base colours
+        "white":                rgb(255, 255, 255),
+        "black":                rgb(17, 17, 17),
+        "primary":              rgb(10, 211, 255),
+        "secondary":            rgb(235, 236, 238),
+        // Greyscale
+        "smoke":                rgb(240, 240, 240),
+        "silver":               rgb(221, 221, 221),
+        "gray":                 rgb(170, 170, 170)
+    ),
+    $colors
+);
+
+// Base Colors
+$font-color:                    rgb(62, 62, 62) !default;
+
+// Borders
+$border-width:                  1px !default;
+$border-color:                  map-get($colors, "silver") !default;
+
+// Miscellaneous
+$global-radius:                 .25rem !default;
+$darken-hover-percent:          10% !default;  // used within hovers in links and buttons
+$animation-speed-fast:          400ms !default;
+$easing-default:                cubic-bezier(.25, .46, .45, .94) !default;  // easeOutQuad - Further easing options can be found at https://easings.net/
+
+// Buttons
+$buttons: () !default;
+$buttons: map-merge(
+    (
+        // Name         Background Color                 Font color
+        primary:        map-get($colors, "primary")      map-get($colors, "white"),
+        secondary:      map-get($colors, "secondary")    map-get($colors, "black")
+    ),
+    $buttons
+);
+
+$button-border-width:           $border-width !default;
+$button-border-radius:          $global-radius !default;
+$button-font-size:              1.5rem !default;
+$button-font-weight:            400 !default;
+$button-line-height:            1.5 !default;
+$button-text-transform:         uppercase !default;
+$button-padding-y:              .8rem !default;
+$button-padding-x:              1.5rem !default;
+$button-transition:             background-color $easing-default $animation-speed-fast, border-color $easing-default $animation-speed-fast !default;
+
+// The below applies to the default button class only `.button`
+$button-default-border-color:   $border-color !default;
+$button-default-bg-color:       map-get($colors, "white") !default;
+$button-default-font-color:     $font-color !default;
